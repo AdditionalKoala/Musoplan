@@ -1,6 +1,9 @@
+//TO ADD MUSICIAN/S TO TROUPE - ASK USER INPUT FOR ITERATIONS AND WRITE DETAILS TO FILE
+
+
+
 //import Guitarist from './Musician'
 const Guitarist =require('./Musician.js')
-
 let Musician1 = new Guitarist("Robins", 3, 2)
 let Musician2 = new Guitarist("Smita", 30, 20)
 //let Musician3 = new Guitarist("Grace", 300, 200)
@@ -18,3 +21,4 @@ myMap.set(2, Musician2);
 //PRINT TEAM IN A TABLE
 console.log(myMap);
 
+//Ask user how many musicians to add to troupe.Add to the file and read all. clear file method.

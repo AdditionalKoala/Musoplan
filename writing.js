@@ -3,6 +3,7 @@
 
 
 
+const { clear } = require('console');
 const Guitarist =require('./Musician.js')
 fs = require('fs');//call for modules for writing to a text file
 filename='temp.txt' // specify filename in current folder

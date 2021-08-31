@@ -41,4 +41,5 @@ class Guitarist extends Musician
     }
 }
 
-module.exports = Guitarist
+module.exports = Guitarist, Musician
+

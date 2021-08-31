@@ -1,9 +1,10 @@
 //import { Musician } from "./Musician"
 //export
 
-fs = require('fs');
-const prompt = require('prompt-sync')()
-let name=prompt("Enter your name  ")
+
+function createTroupe()
+{
+let name=prompt("Enter troupe name  ")
 while((name.length<3) || (name.length>30))
 {
   name=prompt("Re-enter name (3-30 characters)")
@@ -14,7 +15,7 @@ while((instruments<=0) || (instruments>5))
   instruments=prompt("Enter number of instruments again (1-5) ")
 }
 let genre=prompt("Enter the genre (rock/pop/jazz) ")
-/* while((genre != 'rock') || (genre = 'pop') || (genre = 'jazz'))
+/* while((genre !== 'rock') || (genre !== 'pop') || (genre !== 'jazz'))
 {
   genre=prompt("Re-enter the genre (rock/pop/jazz) ")
 }
@@ -35,13 +36,56 @@ Troupe[1]=parseInt(instruments);
 Troupe[2]=genre;
 Troupe[3]=parseInt(rate);
 Troupe[4]=parseInt(duration);
-console.log("Troupe details are as follows:"+"\n"+Troupe)
-let cost = Troupe[3]*Troupe[4]
-console.log("The cost would be  "+ cost + " dollars")
 let text = Troupe.toString()
+let text1 = "Troupe details are as follows:\n"+text
+console.log(text1)
+return text1
+}
+
+
+
+function troupeCost()
+{
+  let name=prompt("Enter troupe name  ")
+  while((name.length<3) || (name.length>30))
+  {
+    name=prompt("Re-enter name (3-30 characters)")
+  }
+    let rate=prompt("Enter the hourly rate  ")
+  while(rate < 50)
+  {
+    rate=prompt("Re-enter the rate (>=50) ")
+  }
+  let duration=prompt("Enter the duration .5-3 hrs  ")
+  while((duration<0.5) || (duration >3))
+  {
+    duration=prompt("Re-enter the duration .5 - 3 hrs ")
+  }
+  let Troupe=['',2,2]
+  Troupe[0]=name
+  Troupe[1]=parseInt(rate);
+  Troupe[2]=parseInt(duration);  
+let cost = Troupe[1]*Troupe[2]
+let costtext = "The cost of engaging the troupe "+Troupe[0]+ " for this duration "+" would be "+ cost + " dollars"
+console.log(costtext)
+return costtext
+}
+
+
+function writeTroupe()
+{  
+  fs = require('fs');
+  const prompt = require('prompt-sync')()
+  
+let text = createTroupe()
 fs.writeFile("list.txt",text, 'utf-8', function (err) {
   if (err) return console.log(err);
 });
+}
+
+
+
+module.exports ={createTroupe, troupeCost, writeTroupe}
 
 /* //const inquirer = require('inquirer');
 var troupe = {
