@@ -1,1 +1,64 @@
-*	The important data structures – classes, collections and maps*	The relevant class hierarchies – class Musician, with child classes: Guitarist, 	Bassist, Percussionist, Flautist*	The behavioural loops – methods to push values into arrays/objects/maps; 	methods to print, methods to call values from another file*	The conditional behaviour – the constraints on input values for each property*	Inputs to the program – Troupe specifics and musician specifics*	Outputs of the program – Troupe summary and details; troupe list*	Class descriptionso	What data will the class have : 	Class ‘Musician’ will have the following data/properties - Musician Name, 	Instrument, Interesting fact, Yrs of playing the instrument, Hourly rate for 	musiciano	What behaviours will the class have	The classes will have the print behaviours depending on user input. There 	will also be a method/behaviour for fetching troupe names from another 	file.o	What (if any) classes will the class inherit from*	Class relationships – The 4 different Instrumentalist classes will inherit all 	properties from Musician class. Added to that, the child classes will have the 	‘interesting fact’ property.o	Does this class contain examples of other classes?*	Program Inputso	How users input data into the program – Command Line*	Program Outputso	How users extract data from the program – Command Line	Save the minutes of the meeting and your report to be added to the repository you 	create in Activity 2.
+
+
+
+
+
+
+
+Minutes of meeting with Globex's music team management officer
+==============================================================
+
+Project - Musoplan
+Date - 25 Aug 2021
+
+
+Discussion - The music management officer needs a software solution to help model and predict the success of Globex's elite musicians by identifying costs when deploying them as a troupe. Some salient points were:
+
+The user will use the Command line for inputs and outputs. There will also be a need to write-to and read-from files
+The user will be inputting specific details for musicians and troupes which will need storing in memory so that they can be mapped to each other
+The user will be feeding records one property at a time
+User will decide how many musicians/troupe need adding, in one session. The program will allow for taking inputs as many times as indicated by user
+Individual musician rates are independent of troupe rates. Troupe costs are calculated purely on troupe rates and duration of engagement.
+
+
+From the above discussion, I have gathered the following:
+
+Important data structures
+-----------------------------
+
+Classes and Collections are going to be the primary data structures. We'll be using Classes for creating Musicians and classifying them by instrument(using child classes). Since we need to map the ,musicians to the troupes, it would make sense to use Maps as the data structure for troupe information.
+
+Because class properties will only grasp the user-given values, rather than contain it, we'll be using objects and arrays to store these in the computer’s memory as sequences of bits holding the addresses—the place in memory—of their contents.
+
+
+
+The relevant class hierarchies
+-----------------------------
+Musician - defined as Parent class
+Guitarist, Bassist, Percussionist and Flautist being the child classes inherit the parent class' properties.
+
+
+The behavioural loops and 
+-----------------------------
+Since the user said he/she will decide how many entities will be added on a given occasion, the program prompts the user to input the number of entities he/she wishes to map/assign. Using the user-given number, the program iterates as many times to prompt the user for entity details.
+
+
+
+The conditional behaviour
+-----------------------------
+Given the constraints placed on the properties of the Musician and Troupe entities, we use the Switch, If-Else, and while loops for checking for compliance to the given constraints.
+
+
+Inputs to the program
+-----------------------------
+
+The properties of troupes and musicians are the inputs to the program. So also, are the mappings between the troupes and musicians. There are received from user using the Command Line. For one of the requirements, input is read from a text file.
+
+
+Outputs of the program
+-----------------------------
+
+The outputs to the requirements depend on user choice. The 3 ways this has been figured into the software is through
+* Command Line display
+* Writing to text file
+
