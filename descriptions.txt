@@ -1,0 +1,2 @@
+{name:asdads	instruments:1	genre:rock	rate:80	duration:3}
+{name:qweeeeeeee	instruments:4	genre:rock	rate:60	duration:3}
