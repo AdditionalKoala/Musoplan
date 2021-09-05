@@ -1,4 +1,3 @@
-
 class Musician{
     constructor(musname, yrsplaying, hrlyrate)
     {
@@ -11,18 +10,7 @@ class Musician{
         let str1 = " with "+this.yrsplaying+" years of experience and an hourly rate of "+this.hrlyrate
         return str1
     }
-    getName()
-    {
-        return this.musname
-    }
-    getYearsOfPlaying()
-    {
-        return this.yrsplaying
-    }
-    getHourlyRate()
-    {
-        return this.hrlyrate
-    }
+    
 }
 
 class Guitarist extends Musician 
@@ -41,5 +29,58 @@ class Guitarist extends Musician
     }
 }
 
-module.exports = Guitarist, Musician
+class Bassist extends Musician 
+{
+    constructor(musname, yrsplaying, hrlyrate) 
+    {
+        super(musname, yrsplaying, hrlyrate) // Inheriting the Musician fields in the super class  'Musician'
+        this.interestingFact = " "
+    }
+    getDetails()
+    {
+        this.interestingFact = "Everyone loves a bassist" // Assign 'Guitarist' specific 'interesting fact'
+        let str3 = this.musname + " is a bassist"
+       let str2 = "\n"+this.interestingFact + "\n" + str3 + super.getMusicianDetails()
+        return str2
+    }
+}
 
+class Percussionist extends Musician 
+{
+    constructor(musname, yrsplaying, hrlyrate) 
+    {
+        super(musname, yrsplaying, hrlyrate) // Inheriting the Musician fields in the super class  'Musician'
+        this.interestingFact = " "
+    }
+    getDetails()
+    {
+        this.interestingFact = "Me drum" // Assign 'Percussionist' specific 'interesting fact'
+        let str3 = this.musname + " is a percussionist"
+       let str2 = "\n"+this.interestingFact + "\n" + str3 + super.getMusicianDetails()
+        return str2
+    }
+}
+
+class Flautist extends Musician 
+{
+    constructor(musname, yrsplaying, hrlyrate) 
+    {
+        super(musname, yrsplaying, hrlyrate) // Inheriting the Musician fields in the super class  'Musician'
+        this.interestingFact = " "
+    }
+    getDetails()
+    {
+        this.interestingFact = "1989 heavy metal instrument of the year" // Assign 'Percussionist' specific 'interesting fact'
+        let str3 = this.musname + " is a flautist"
+       let str2 = "\n"+this.interestingFact + "\n" + str3 + super.getMusicianDetails()
+        return str2
+    }
+}
+// module.exports = Bassist, Guitarist, Musician, Percussionist, Flautist
+module.exports = {
+    Bassist:Bassist,
+    Guitarist:Guitarist,
+    Musician:Musician,
+    Percussionist:Percussionist,
+    Flautist:Flautist
+}
